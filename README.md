@@ -24,9 +24,7 @@ Team Members and Roles:
 
  - Responsibilities: Overseeing project planning, scheduling, collaboration, and leading UI/UX design efforts to ensure an intuitive and visually appealing user experience.
 
- 
 
-Timeline: The project commenced on July 4, 2024, and concluded on July 11, 2024.
 
  
 
