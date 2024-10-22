@@ -1,21 +1,35 @@
-iconst express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-
+const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
+
+// Middleware to parse JSON data
 app.use(express.json());
-app.use(cors());
 
-// MongoDB connection
-mongoose.connect('mongodb://localhost:27017/hazonvinex', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
-
-// Sample route
-app.get('/', (req, res) => {
-    res.send('Hazon Vinex API');
+// Define user routes directly in server.js
+app.get('/api/users', (req, res) => {
+  res.json({ message: 'Get all users' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.post('/api/users', (req, res) => {
+  res.json({ message: 'Create a new user' });
+});
+
+// Define project routes directly in server.js
+app.get('/api/projects', (req, res) => {
+  res.json({ message: 'Get all projects' });
+});
+
+app.post('/api/projects', (req, res) => {
+  res.json({ message: 'Create a new project' });
+});
+
+// Example base route
+app.get('/', (req, res) => {
+  res.send('Welcome to Hazon Vinex API!');
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
